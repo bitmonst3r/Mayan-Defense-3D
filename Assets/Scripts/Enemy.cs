@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Transactions;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Enemy : MonoBehaviour
 {
-    public Waypoints[] navPoints;
+    private Waypoints[] navPoints;
     private Transform target;
     private Vector3 direction;
     public float amplify = 1;
@@ -17,20 +18,18 @@ public class Enemy : MonoBehaviour
     private int startingHealth;
     public int currentHealth = 100;
     public int cashPoints = 100;
+    public AudioClip deathSound;
+    public UnityEvent DeathEvent;
 
       // Start is called before the first frame update
-    void Start()
+   public void StartEnemy(Waypoints[] navigationalPath)
     {
+        navPoints = navigationalPath;
         purse = GameObject.FindGameObjectWithTag("Purse").GetComponent<Purse>();
         healthBar = GetComponentInChildren<HealthBar>();
         startingHealth = currentHealth;
-        //Place our enemy at the start point
         transform.position = navPoints[index].transform.position;
         NextWaypoint();
-    
-        //Move towards the next waypoint
-        //Retarget to the following waypoint when we reach our current waypoint
-        //Repeat through all of the waypoints until you reach the end
     }
 
     // Update is called once per frame
@@ -64,14 +63,27 @@ public class Enemy : MonoBehaviour
 
     public void Damage(int amountDamage)
     {
+        // Decreases health when taking damage
         currentHealth -= amountDamage;
         if (currentHealth < 0)
         {
+            // If enemy is destroyed add cash to purse
             purse.AddCash(cashPoints);
+
+            // Notify towers that enemy is killed
+            DeathEvent.Invoke();
+
+            // Death sound
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.clip = deathSound;
+            audio.Play();
+
+            // Destroy enemy
             Destroy(this.gameObject);
         }
         else
         {
+            // Reflects health from damage to GUI HealthBar
             healthBar.TakeDamage(currentHealth, startingHealth);
         }
     }
