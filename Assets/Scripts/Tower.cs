@@ -8,7 +8,6 @@ public class Tower : MonoBehaviour
 {
     public List<Enemy> currentEnemies;
     public Enemy currentTarget;
-
     public GameObject turret;
     public GameObject turretBullet;
     public Transform current_position;

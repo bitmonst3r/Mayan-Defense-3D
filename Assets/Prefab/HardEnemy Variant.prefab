@@ -7,6 +7,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 876585669134463376, guid: a7612fcea61f0ca4a91db8050e5b223d, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3093511211940144740, guid: a7612fcea61f0ca4a91db8050e5b223d, type: 3}
+      propertyPath: m_Volume
+      value: 0.674
+      objectReference: {fileID: 0}
+    - target: {fileID: 3093511211940144740, guid: a7612fcea61f0ca4a91db8050e5b223d, type: 3}
+      propertyPath: BypassListenerEffects
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3093511211940144740, guid: a7612fcea61f0ca4a91db8050e5b223d, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5755185830338090790, guid: a7612fcea61f0ca4a91db8050e5b223d, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -87,6 +103,30 @@ PrefabInstance:
       propertyPath: DeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8924182303184337430, guid: a7612fcea61f0ca4a91db8050e5b223d, type: 3}
+      propertyPath: DeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8924182303184337430, guid: a7612fcea61f0ca4a91db8050e5b223d, type: 3}
+      propertyPath: DeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8924182303184337430, guid: a7612fcea61f0ca4a91db8050e5b223d, type: 3}
+      propertyPath: DeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8924182303184337430, guid: a7612fcea61f0ca4a91db8050e5b223d, type: 3}
+      propertyPath: DeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8924182303184337430, guid: a7612fcea61f0ca4a91db8050e5b223d, type: 3}
+      propertyPath: DeathEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8924182303184337430, guid: a7612fcea61f0ca4a91db8050e5b223d, type: 3}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: ed4c294180c888e438f2725cbe2ecb0d, type: 3}
     - target: {fileID: 8924182303184337431, guid: a7612fcea61f0ca4a91db8050e5b223d, type: 3}
       propertyPath: m_Name
       value: HardEnemy Variant

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Enemy group struct/ Container to hold enemies/amount and time delay 
+// Enemy group struct/ Container to spawn enemies, amount of enemies and time delay between enemies
 [System.Serializable]
 public struct Group
 {
@@ -28,14 +28,9 @@ public struct Wave
 
 public class EnemyManager : MonoBehaviour
 {
-    //Figure out what enemy waves look like and how to handle them (Ex. Spawning, how many, wait time in between)
-    //public GameObject easyEnemy;
-    //public GameObject hardEnemy;
     //Pass navigation path
     public Waypoints[] navPoints;
     public Wave enemyWave;
-    //public GameObject easyEnemy;
-    //public GameObject hardEnemy;
 
     // Start is called before the first frame update
     void Start()

@@ -66,17 +66,13 @@ public class Enemy : MonoBehaviour
         // Decreases health when taking damage
         currentHealth -= amountDamage;
         if (currentHealth < 0)
-        {
+        { 
+
             // If enemy is destroyed add cash to purse
             purse.AddCash(cashPoints);
 
             // Notify towers that enemy is killed
             DeathEvent.Invoke();
-
-            // Death sound
-            AudioSource audio = GetComponent<AudioSource>();
-            audio.clip = deathSound;
-            audio.Play();
 
             // Destroy enemy
             Destroy(this.gameObject);
@@ -86,6 +82,7 @@ public class Enemy : MonoBehaviour
             // Reflects health from damage to GUI HealthBar
             healthBar.TakeDamage(currentHealth, startingHealth);
         }
+
     }
 
 }
